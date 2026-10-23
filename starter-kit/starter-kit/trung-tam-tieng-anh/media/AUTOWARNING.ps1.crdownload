@@ -1,0 +1,8 @@
+#Script: AUTOWARNING.ps1
+#Tac_gia: Nguyen Thuan Phat
+#Ngay tao: 21_10_2026
+Write-Host "Dang loc canh bao thanh toan...""
+=== TONG HOP ACCESS LOG ===" > ./logs/tong_hop_ngay2.txt
+(Get-Content ./logs/payment.log | Select-String "WARNING").count >> logs/tong_hop_ngay2.txt
+Get-Content logs/access.log | Select-String "ERROR" >> logs/tong_hop_ngay2.txt
+Write-Host "Hoan thanh!"
